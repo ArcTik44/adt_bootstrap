@@ -14,6 +14,7 @@ pub fn huffman_encoding(to_encode: &str) -> Vec<String> {
     let mut codes: String = String::new();
     freq.push_str("{");
 
+    //Zapsání frekvencí všech znaků do String
     for (item_key, item_value) in &test {
         freq.push(*item_key);
         freq.push_str(":");
@@ -30,6 +31,7 @@ pub fn huffman_encoding(to_encode: &str) -> Vec<String> {
         .iter()
         .map(|x| new_box(new_node(*(x.1), Some(*(x.0)))))
         .collect();
+
     /*Vytvoření Huffmanova stromu */
     while p.len() > 1 {
         p.sort_by(|a, b| (&(b.freq)).cmp(&(a.freq)));
@@ -42,6 +44,7 @@ pub fn huffman_encoding(to_encode: &str) -> Vec<String> {
     }
     let root = p.pop().unwrap();
     generate_codes(&root, &mut h, "".to_string());
+    
     codes.push_str("{");
     for (item_key, item_value) in &h {
         codes.push(*item_key);
