@@ -1,4 +1,3 @@
-use std::str::FromStr;
 pub fn binary_tree_merge(tree1: &str, tree2: &str) -> String {
     let split1 = tree1.split(";");
     let split2 = tree2.split(";");
@@ -7,13 +6,15 @@ pub fn binary_tree_merge(tree1: &str, tree2: &str) -> String {
     let mut arr2: Vec<i32> = Vec::new();
 
     for num in split1 {
-        let insert: i32 = FromStr::from_str(num).unwrap();
-        arr1.push(insert);
+        if let Ok(n) = num.parse::<i32>() {
+            arr1.push(n);
+        }
     }
 
     for num in split2 {
-        let insert: i32 = FromStr::from_str(num).unwrap();
-        arr2.push(insert);
+        if let Ok(n) = num.parse::<i32>() {
+            arr2.push(n);
+        }
     }
     arr1.sort();
     arr2.sort();

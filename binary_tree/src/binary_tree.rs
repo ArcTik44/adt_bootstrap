@@ -4,9 +4,11 @@ pub fn binary_tree_create(seq: &str) -> Vec<String> {
     let mut arr: Vec<i32> = Vec::new();
 
     for num in split {
-        let insert: i32 = num.parse().unwrap();
-        arr.push(insert);
+        if let Ok(n) = num.parse::<i32>() {
+            arr.push(n);
+        }
     }
+    
     arr.sort();
 
     let tree = build_tree(arr);

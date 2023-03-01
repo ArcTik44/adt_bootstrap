@@ -9,13 +9,13 @@ struct Node {
 pub fn huffman_encoding(to_encode: &str) -> Vec<String> {
     /*Hashmapa pro ukládání frekvencí jednotlivých charakterů */
     let mut results: Vec<String> = Vec::new();
-    let test: HashMap<char, i32> = frequency(to_encode);
+    let freq_map: HashMap<char, i32> = frequency(to_encode);
     let mut freq: String = String::new();
     let mut codes: String = String::new();
     freq.push_str("{");
 
     //Zapsání frekvencí všech znaků do String
-    for (item_key, item_value) in &test {
+    for (item_key, item_value) in &freq_map {
         freq.push(*item_key);
         freq.push_str(":");
         freq.push_str(&item_value.to_string());
@@ -27,7 +27,7 @@ pub fn huffman_encoding(to_encode: &str) -> Vec<String> {
     let mut h: HashMap<char, String> = HashMap::new();
 
     /*Vytvoříme pole Nodů pro každý char v hashmapě */
-    let mut p: Vec<Box<Node>> = test
+    let mut p: Vec<Box<Node>> = freq_map
         .iter()
         .map(|x| new_box(new_node(*(x.1), Some(*(x.0)))))
         .collect();

@@ -1,10 +1,7 @@
 use array_sort::sort::sort;
 use binary_merge::binary_merge::binary_tree_merge;
 use binary_tree::binary_tree::binary_tree_create;
-use cursive::{
-    views::{Button, Dialog, LinearLayout, TextView},
-    Cursive,
-};
+use cursive::{views::{Button, Dialog, LinearLayout, TextView},Cursive,};
 use huffman_en::huffman_encoding::huffman_encoding;
 
 pub fn start_huffman(s: &mut Cursive, string: &str) {
@@ -115,7 +112,7 @@ pub fn start_binary_merge(s: &mut Cursive, to_vec1: &str, to_vec2: &str) {
     let labels = LinearLayout::vertical()
         .child(TextView::new("VSTUP1:"))
         .child(TextView::new("VSTUP2:"))
-        .child(TextView::new("SLOUČENÉ ():"));
+        .child(TextView::new("SLOUČENÉ (PRE ORDER):"));
 
     /*Buttons layout */
     let buttons = LinearLayout::horizontal().child(Button::new("Back", |s|{
