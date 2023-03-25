@@ -42,7 +42,7 @@ Následně se nám opět zobrazí dialogové okno kde budeme vidět náš vstup 
 
 ### Huffmanovo kódování
 
-Huffmanovo kódování funguje na principu najít duplicitní znaky a následně jim přiřadit v závislosti na frekvenci ve vstupním řetězci kód   
+Huffmanovo kódování funguje na principu najít duplicitní znaky a následně jim přiřadit v závislosti na frekvenci ve vstupním řetězci kód. Poté vytvoří podle každého znaku ve vstupním řetězci jeho zašifrovanou kopii. 
 
 ## Binární strom
 
@@ -56,11 +56,11 @@ Vstup:
 
 Následně se nám vypíše výstup procházení stromu.
 
-PRE ORDER - prochází nejdříve levý podstrom a poté pravý
+POST ORDER - prochází uzly nejprve v levém podstromu, poté pravém podstromu, a nakonec rodičovský uzel. 
 
 IN ORDER - od nejmenšího po největší
 
-POST ORDER - prochází pravý podstrom odspodu a následně se přesune na pravý
+PRE ORDER - funguje na podobném principu jako algoritmus „prohledávání do hloubky“. Začne v kořeni stromu a postupuje dále do levého podstromu. Až s ním skončí přesune se na pravý podstrom.
 
 ---
 

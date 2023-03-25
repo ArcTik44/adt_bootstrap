@@ -27,9 +27,9 @@ struct Node {
     right: Option<Box<Node>>,
 }
 
-/*Strom můžeme sestavit pouze v případě */
-fn build_tree(mut vals: Vec<i32>) -> Option<Box<Node>> {
-    vals.sort();
+/*Strom můžeme sestavit pouze v případě, že je pole seřazeno vzestupně*/
+fn build_tree(vals: Vec<i32>) -> Option<Box<Node>> {
+
     if vals.is_empty() {
         return None;
     }
@@ -42,7 +42,6 @@ fn build_tree(mut vals: Vec<i32>) -> Option<Box<Node>> {
 }
 
 /*začíná v nejmenším, končí v největším */
-
 fn in_order_traversal(root: &Option<Box<Node>>) -> String {
     let mut tree: String = String::new();
     if let Some(node) = root {
@@ -53,6 +52,7 @@ fn in_order_traversal(root: &Option<Box<Node>>) -> String {
     }
     return tree;
 }
+
 /*Funguje na podobném principu jako DFS (začíná v rootu, končí ve spodním pravém uzlu */
 fn post_order_traversal(root: &Option<Box<Node>>) -> String {
     let mut tree: String = String::new();
@@ -64,6 +64,7 @@ fn post_order_traversal(root: &Option<Box<Node>>) -> String {
     }
     return tree;
 }
+
 /*Začíná v nejmenším potomku končí v rootu */
 fn pre_order_traversal(root: &Option<Box<Node>>) -> String {
     let mut tree: String = String::new();
