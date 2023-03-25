@@ -14,6 +14,7 @@ cargo build --release
 
 ## Run
 ```Shell
+cd ./cursive_cli/
 cargo run
 ```
 
