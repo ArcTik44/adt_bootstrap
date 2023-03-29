@@ -1,3 +1,4 @@
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 mod app;
 use app::{start_binary_merge, start_binary_tree, start_heap_sort, start_huffman};
 use cursive::view::{Nameable, Resizable};
